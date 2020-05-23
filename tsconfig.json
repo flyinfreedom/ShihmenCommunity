@@ -31,7 +31,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx", "src/firebase/credentials.ts", "src/firebase/auth.ts", "src/firebase/app.ts"
   ],
   "exclude": [
     "node_modules"
