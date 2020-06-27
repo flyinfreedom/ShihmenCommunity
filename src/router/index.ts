@@ -26,11 +26,12 @@ Vue.use(VueRouter)
     meta: {
       requiresAuth: true
     },
+    component: () => import(/* webpackChunkName: "admin.layout" */ '../components/admin/Layout.vue'),
     children: [
       {
         path: '',
         name: 'News',
-        component: () => import(/**/ '../components/admin/News.vue')
+        component: () => import(/* webpackChunkName: "admin.news" */ '../components/admin/News.vue')
       }
     ]
   }
@@ -44,9 +45,14 @@ const router = new VueRouter({
 
 router.beforeEach(async (to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  console.log(await Auth.currentUser, Auth);
-  if (requiresAuth && !await Auth.currentUser){
-    next('Signin');
+  if (requiresAuth){  
+    Auth.onAuthStateChanged(user => {
+      if (user) {
+        next();
+      } else {
+        next('Signin');
+      }
+    });
   }else{
     next();
   }
