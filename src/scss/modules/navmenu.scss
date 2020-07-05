@@ -1,0 +1,63 @@
+
+.nav-menu__wrapper {
+  width: 100%;
+  height: $nav-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $nav-z-index;
+  @include flex($align-items: center);
+  background-color: $white;
+  padding: 0 110px 0 40px;
+  .title {
+    cursor: pointer;
+    @include flex($align-items: center);
+    .logo {
+      width: 30px;
+    }
+    span {
+      padding: 0 6px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+  .nav {
+    @include flex {
+      flex: 1;
+    }
+    padding: 0 24px;
+  }
+  .nav-menu {
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    .menu__item {
+      vertical-align: middle;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: bold;
+      a {
+        display: block;
+        padding: 12px 24px;
+      }
+    }
+  }
+  .mail-connection {
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    @include flex(column, center, center);
+    background-color: $main-color;
+    .mail-icon {
+      width: 25px;
+    }
+    span {
+      padding: 10px 0;
+      font-size: 14px;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@mixin center($direction) {
+	position: absolute;
+	@if $direction==xy {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	@else if $direction==x {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@else if $direction==y {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+@mixin background-image($fileName) {
+	background-image: url($PATH_IMG + $fileName);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	@content;
+}
+
+@mixin flex($direction: row, $align-items: false, $justify-content: false) {
+  display: flex;
+  flex-direction: $direction;
+  @if $align-items {
+    align-items: $align-items;
+  }
+  @if $justify-content {
+    justify-content: $justify-content;
+  }
+	@content;
+}

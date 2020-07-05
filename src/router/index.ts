@@ -1,20 +1,39 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
 import {Auth} from '../firebase/auth';
 
 Vue.use(VueRouter)
 
-  const routes: Array<RouteConfig> = [
+const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import('../views/Home.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/travel',
+    name: 'Travel',
+    component: () => import(/* webpackChunkName: "travel" */ '../views/Travel.vue')
+  },
+  {
+    path: '/introduction',
+    name: 'Introduction',
+    component: () => import(/* webpackChunkName: "introduction" */ '../views/Introduction.vue')
+  },
+  {
+    path: '/env-protection',
+    name: 'EnvProtection',
+    component: () => import(/* webpackChunkName: "env-protection" */ '../views/EnvProtection.vue')
+  },
+  {
+    path: '/industry',
+    name: 'Industry',
+    component: () => import(/* webpackChunkName: "industry" */ '../views/Industry.vue')
+  },
+  {
+    path: '/welfare',
+    name: 'Welfare',
+    component: () => import(/* webpackChunkName: "welfare" */ '../views/Welfare.vue')
   },
   {
     path: '/signin',
