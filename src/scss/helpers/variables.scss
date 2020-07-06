@@ -3,10 +3,16 @@ $black: #000 !default;
 $white: #FFF !default;
 
 $main-color: #6c9a7e;
+$secondary-color: #f2f7f3;
 
-// nav-bar
-$nav-height: 110px;
-$nav-height-md: 110px;
-$nav-height-xs: 110px;
+$nav-height: (
+  desktop: 110px,
+  tablet: 60px
+);
 
 $nav-z-index: 100;
+
+$breakpoints: (
+  mobile: 600px,
+  tablet: 1200px,
+);

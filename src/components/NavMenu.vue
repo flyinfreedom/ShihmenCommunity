@@ -3,17 +3,27 @@
     <h1>
       <router-link class="title" :to="{ name: 'Home' }">
         <img src="https://fakeimg.pl/300/" class="logo" alt="shihmen-community-logo">
-        <span>桃園龍潭區石門社區發展協會</span>
+        <span class="content">
+          <span>桃園龍潭區</span>石門社區發展協會
+        </span>
       </router-link>
     </h1>
-    <nav class="nav">
-      <ul class="nav-menu">
-        <li class="menu__item" v-for="item in menu" :key="item.route">
-          <router-link :to="{ name: item.route }">
-            {{ item.title }}
-          </router-link>
-        </li>
-      </ul>
+    <nav class="nav__wrapper">
+      <div class="nav-hamburger" @click="onClickHamBurger">
+        <div class="ham" />
+        <span class="content">Menu</span>
+      </div>
+      <transition name="nav">
+        <div class="nav" v-show="isNavDisplay">
+          <ul class="nav-menu">
+            <li class="menu__item" v-for="item in menu" :key="item.route">
+              <router-link :to="{ name: item.route }">
+                {{ item.title }}
+              </router-link>
+            </li>
+          </ul>
+        </div>
+      </transition>
     </nav>
     <a class="mail-connection" href="mailto:shihmencommunity@gmail.com">
       <img src="https://fakeimg.pl/300/" class="mail-icon" alt="mail-icon">
@@ -28,6 +38,10 @@ import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class NavMenu extends Vue {
   menu: any[] = [
+    {
+      title: '首頁',
+      route: 'Home',
+    },
     {
       title: '社區輕旅行',
       route: 'Travel',
@@ -49,6 +63,13 @@ export default class NavMenu extends Vue {
       route: 'Welfare',
     }
   ]
+
+  isNavDisplay = false;
+
+  onClickHamBurger() {
+    // 需先在created判斷是否為mobile, listen resize
+    this.isNavDisplay = true;
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 
 .nav-menu__wrapper {
   width: 100%;
-  height: $nav-height;
+  height: map-get($nav-height, desktop);
   position: fixed;
   top: 0;
   left: 0;
@@ -15,31 +15,41 @@
     .logo {
       width: 30px;
     }
-    span {
+    .content {
       padding: 0 6px;
       font-size: 20px;
       font-weight: 500;
     }
   }
-  .nav {
+  .nav__wrapper {
     @include flex {
       flex: 1;
     }
     padding: 0 24px;
   }
-  .nav-menu {
+  .nav-hamburger {
+    display: none;
+  }
+  .nav {
     width: 100%;
     height: 100%;
-    text-align: right;
-    .menu__item {
-      vertical-align: middle;
-      display: inline-block;
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: bold;
-      a {
-        display: block;
-        padding: 12px 24px;
+    .nav-menu {
+      width: inherit;
+      height: inherit;
+      text-align: right;
+      .menu__item {
+        vertical-align: middle;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        &:first-child {
+          display: none;
+        }
+        a {
+          display: block;
+          padding: 12px 24px;
+        }
       }
     }
   }
@@ -49,15 +59,142 @@
     height: 100%;
     right: 0;
     top: 0;
-    @include flex(column, center, center);
+    @include flex(column, center, flex-end);
     background-color: $main-color;
     .mail-icon {
       width: 25px;
     }
     span {
-      padding: 10px 0;
+      padding: 10px 0 26px 0;
       font-size: 14px;
       color: $white;
+    }
+  }
+}
+
+@include breakpoint(tablet) {
+  .nav-menu__wrapper {
+    height: map-get($nav-height, tablet);
+    padding-right: 120px;
+    .nav__wrapper {
+      width: 60px;
+      height: 100%;
+      background-color: $secondary-color;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0;
+      cursor: pointer;
+      .nav-content, .nav-hamburger {
+        display: block;
+      }
+      .nav-hamburger {
+        width: 100%;
+        height: 100%;
+        @include flex(column, center, flex-end);
+        .ham {
+          position: relative;
+          width: 18px;
+          height: 1.5px;
+          background-color: #4a4a4a;
+          &::before {
+            content: '';
+            bottom: 5px;
+            left: 0;
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: #4a4a4a;
+          }
+          &::after {
+            content: '';
+            top: 5px;
+            left: 0;
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: #4a4a4a;
+          }
+        }
+        .content {
+          font-size: 12px;
+          padding: 10px 0 10px 0;
+          color: #4a4a4a;
+        }
+      }
+      .nav {
+        overflow: auto;
+        position: fixed;
+        width: 100%;
+        top: map-get($nav-height, tablet);
+        left: 0;
+        bottom: 0;
+        padding: 8px 60px 0px 60px;
+        background-color: $secondary-color;
+        .nav-menu {
+          width: 100%;
+          height: auto;
+          padding-bottom: 80px;
+          padding-left: 60px;
+        }
+        .menu__item {
+          &:first-child {
+            display: block;
+          }
+          font-weight: 500;
+          display: block;
+          text-align: left;
+          a {
+            padding: 11.5px 0;
+          }
+          &+.menu__item {
+            border-top: solid 1px $main-color;
+          }
+        }
+      }
+    }
+    .mail-connection {
+      width: 60px;
+      right: 60px;
+      .mail-icon {
+        width: 20px;
+      }
+      span {
+        padding: 4px 0 10px 0;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@include breakpoint(mobile) {
+  .nav-menu__wrapper {
+    padding: 14px 10px;
+    .title {
+      .content {
+        font-size: 12px;
+        &>span {
+          font-size: 10px;
+          display: block;
+          padding-bottom: 4px;
+        }
+      }
+    }
+    .nav__wrapper {
+      .nav {
+        padding-right: 0;
+        .nav-menu {
+          padding-left: 24px;
+          .menu__item {
+            a {
+              padding: 12px 0;
+            }
+            &+.menu__item {
+              border-top: none;
+            }
+          }
+        }
+      }
     }
   }
 }

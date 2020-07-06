@@ -1,3 +1,6 @@
 #app {
-  padding-top: $nav-height;
+  padding-top: map-get($nav-height, desktop);
+  @include breakpoint(tablet) {
+    padding-top: map-get($nav-height, tablet);
+  }
 }

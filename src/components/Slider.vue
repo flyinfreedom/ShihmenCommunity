@@ -29,13 +29,12 @@ import { Component, Prop, Mixins } from "vue-property-decorator";
 import PageVisibilityMixin from '@/utils/page-visibility-mixin';
 
 enum BreakPoint {
-  Web = 1024,
+  Tablet = 1200,
   Mobile = 600,
 }
 enum NavHeight {
   Web = 110,
-  // fake
-  Mobile = 110,
+  Tablet = 60,
 }
 @Component
 export default class HomeSlider extends Mixins(PageVisibilityMixin) {
@@ -59,12 +58,12 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
 
   created() {
     this.getSliderHeight();
-    this.visibilityChangeListenener();
     window.addEventListener('resize', this.getSliderHeight);
+    this.visibilityChangeListenener();
   }
 
   mounted() {
-    if(this.auto) this.autoPlay();
+    if (this.auto) this.autoPlay();
   }
 
   autoPlay() {
@@ -74,7 +73,7 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
   }
 
   stopPlay() {
-    if(this.interval) clearInterval(this.interval);
+    if (this.interval) clearInterval(this.interval);
   }
 
   onClickButton(index: number) {
@@ -84,9 +83,14 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
   }
 
   getSliderHeight(): void {
+    if (window.innerWidth < BreakPoint.Mobile) {
+      this.sliderHeight = '57.5vw';
+      return;
+    }
+
     let navHeight = NavHeight.Web;
-    if(window.innerWidth <= BreakPoint.Web) {
-      navHeight = NavHeight.Mobile;
+    if (window.innerWidth < BreakPoint.Tablet) {
+      navHeight = NavHeight.Tablet;
     }
     this.sliderHeight = (window.innerHeight - navHeight) + 'px';
   }
@@ -102,7 +106,7 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
 
   visibilityChangeListenener(): void {
     const documentAddEventListenerCheck: boolean = this.documentAddEventListenerCheck();
-    if(documentAddEventListenerCheck) {
+    if (documentAddEventListenerCheck) {
       document.addEventListener('visibilitychange', this.handleVisibilityChange, false);
     }
   }
