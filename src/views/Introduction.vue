@@ -1,13 +1,16 @@
 <template>
   <div class="introduction">
-    Introduction
+    <TitleBanner title="社區介紹" sub-title="Introduction" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import TitleBanner from '@/components/TitleBanner.vue';
 
-@Component
+@Component({
+  components: { TitleBanner }
+})
 export default class Introduction extends Vue {
 
 }

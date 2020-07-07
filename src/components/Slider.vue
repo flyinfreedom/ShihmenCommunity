@@ -1,5 +1,5 @@
 <template>
-  <div class="slider__wrapper" :style="{ 'height': sliderHeight }">
+  <div class="slider__wrapper">
     <keep-alive>
       <transition name="slider" mode="in-out">
         <template v-for="(image, index) in images">
@@ -28,14 +28,6 @@
 import { Component, Prop, Mixins } from "vue-property-decorator";
 import PageVisibilityMixin from '@/utils/page-visibility-mixin';
 
-enum BreakPoint {
-  Tablet = 1200,
-  Mobile = 600,
-}
-enum NavHeight {
-  Web = 110,
-  Tablet = 60,
-}
 @Component
 export default class HomeSlider extends Mixins(PageVisibilityMixin) {
   @Prop({ type: Number, default: 6000 }) timer!: number;
@@ -43,7 +35,6 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
 
   showIndex = 0;
   interval: number | null = null;
-  sliderHeight = '100vh';
   images: any[] = [
     {
       url: 'slider-fake0.png',
@@ -57,8 +48,8 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
   ];
 
   created() {
-    this.getSliderHeight();
-    window.addEventListener('resize', this.getSliderHeight);
+    // this.getSliderHeight();
+    // window.addEventListener('resize', this.getSliderHeight);
     this.visibilityChangeListenener();
   }
 
@@ -82,18 +73,13 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
     this.autoPlay();
   }
 
-  getSliderHeight(): void {
-    if (window.innerWidth < BreakPoint.Mobile) {
-      this.sliderHeight = '57.5vw';
-      return;
-    }
-
-    let navHeight = NavHeight.Web;
-    if (window.innerWidth < BreakPoint.Tablet) {
-      navHeight = NavHeight.Tablet;
-    }
-    this.sliderHeight = (window.innerHeight - navHeight) + 'px';
-  }
+  // getSliderHeight(): void {
+  //   if (window.innerWidth < BreakPoint.Tablet) {
+  //     this.sliderHeight = '57.5vw';
+  //     return;
+  //   }
+  //   this.sliderHeight = (window.innerHeight - NavHeight.Web) + 'px';
+  // }
 
   handleVisibilityChange(): void {
     const documentHiddenCheck: boolean = this.documentHiddenCheck();
@@ -113,7 +99,7 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
 
   destroyed() {
     document.removeEventListener('visibilitychange', this.handleVisibilityChange);
-    window.removeEventListener('resize', this.getSliderHeight);
+    // window.removeEventListener('resize', this.getSliderHeight);
     if (this.interval) clearInterval(this.interval);
   }
 }

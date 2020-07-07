@@ -9,11 +9,11 @@
       </router-link>
     </h1>
     <nav class="nav__wrapper">
-      <div class="nav-hamburger" @click="onClickHamBurger">
+      <div class="nav-hamburger" @click="toggleNav">
         <div class="ham" />
         <span class="content">Menu</span>
       </div>
-      <transition name="nav">
+      <transition name="fade">
         <div class="nav" v-show="isNavDisplay">
           <ul class="nav-menu">
             <li class="menu__item" v-for="item in menu" :key="item.route">
@@ -33,7 +33,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
+
+enum BreakPoint {
+  Tablet = 1200,
+  Mobile = 600,
+}
 
 @Component
 export default class NavMenu extends Vue {
@@ -66,9 +71,30 @@ export default class NavMenu extends Vue {
 
   isNavDisplay = false;
 
-  onClickHamBurger() {
-    // 需先在created判斷是否為mobile, listen resize
-    this.isNavDisplay = true;
+  created() {
+    this.navDisplay();
+    window.addEventListener('resize', this.navDisplay);
+  }
+
+  @Watch('$route')
+  onRouteChange() {
+    this.navDisplay();
+  }
+
+  navDisplay() {
+    if (window.innerWidth >= BreakPoint.Tablet) {
+      this.isNavDisplay = true;
+    } else {
+      this.isNavDisplay = false;
+    }
+  }
+
+  toggleNav() {
+    this.isNavDisplay = !this.isNavDisplay;
+  }
+
+  destroyed() {
+    window.removeEventListener('resize', this.navDisplay);
   }
 }
 </script>

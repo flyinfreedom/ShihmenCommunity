@@ -49,6 +49,19 @@
         a {
           display: block;
           padding: 12px 24px;
+          position: relative;
+          &.router-link-exact-active {
+            &::before {
+              content: '';
+              position: absolute;
+              width: calc(100% - 52px);
+              height: 3px;
+              background-color: $main-color;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
         }
       }
     }
@@ -69,10 +82,20 @@
       font-size: 14px;
       color: $white;
     }
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 
 @include breakpoint(tablet) {
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+
   .nav-menu__wrapper {
     height: map-get($nav-height, tablet);
     padding-right: 120px;
@@ -141,11 +164,24 @@
           &:first-child {
             display: block;
           }
-          font-weight: 500;
+          font-weight: normal;
           display: block;
           text-align: left;
           a {
             padding: 11.5px 0;
+            &.router-link-exact-active {
+              font-weight: 500;
+              &::before {
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background-color: $main-color;
+                bottom: 50%;
+                left: -32px;
+                transform: translateY(50%);
+              }
+            }
           }
           &+.menu__item {
             border-top: solid 1px $main-color;

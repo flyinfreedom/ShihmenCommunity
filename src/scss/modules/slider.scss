@@ -14,17 +14,19 @@
 
 .slider__wrapper {
   width: 100%;
+  height: calc(100vh - #{map-get($nav-height, desktop)});
   position: relative;
   overflow: hidden;
+  @include breakpoint(tablet) {
+    height: 57.5vw;
+  }
   .slider__image {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @extend %background-cover-center;
   }
   .slider__button {
     position: absolute;
@@ -39,6 +41,14 @@
       height: 143px;
       width: 2px;
       background-color: $white;
+    }
+    @include breakpoint(mobile) {
+      padding: 0 0 21px 0;
+      right: 50%;
+      transform: translateX(50%);
+      &::after {
+        display: none;
+      }
     }
     .button {
       display: inline-block;
