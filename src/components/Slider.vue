@@ -37,13 +37,13 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
   interval: number | null = null;
   images: any[] = [
     {
-      url: 'slider-fake0.png',
+      url: 'slider-fake0.jpg',
     },
     {
-      url: 'slider-fake1.png',
+      url: 'slider-fake1.jpg',
     },
     {
-      url: 'slider-fake2.png',
+      url: 'slider-fake2.jpg',
     }
   ];
 
@@ -64,13 +64,15 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
   }
 
   stopPlay() {
-    if (this.interval) clearInterval(this.interval);
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
   }
 
   onClickButton(index: number) {
     this.showIndex = index;
     this.stopPlay();
-    this.autoPlay();
+    setTimeout(this.autoPlay, 0);
   }
 
   // getSliderHeight(): void {

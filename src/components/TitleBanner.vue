@@ -19,7 +19,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 export default class TitleBanner extends Vue {
   @Prop({ type: String, default: '' }) title!: string;
   @Prop({ type: String, default: '' }) subTitle!: string;
-  @Prop({ type: String, default: 'home/slider-fake0.png' }) backgroundImage!: string;
+  @Prop({ type: String, default: 'home/slider-fake0.jpg' }) backgroundImage!: string;
 }
 </script>
 <style lang="scss" scoped>

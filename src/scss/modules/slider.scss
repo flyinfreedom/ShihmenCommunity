@@ -17,6 +17,7 @@
   height: calc(100vh - #{map-get($nav-height, desktop)});
   position: relative;
   overflow: hidden;
+  min-height: 184px;
   @include breakpoint(tablet) {
     height: 57.5vw;
   }

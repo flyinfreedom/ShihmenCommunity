@@ -1,4 +1,6 @@
+
 #app {
+  min-width: 320px;
   padding-top: map-get($nav-height, desktop);
   @include breakpoint(tablet) {
     padding-top: map-get($nav-height, tablet);

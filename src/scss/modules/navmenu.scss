@@ -1,6 +1,7 @@
 
 .nav-menu__wrapper {
   width: 100%;
+  min-width: 320px;
   height: map-get($nav-height, desktop);
   position: fixed;
   top: 0;
@@ -90,7 +91,7 @@
 
 @include breakpoint(tablet) {
   .fade-enter-active, .fade-leave-active {
-    transition: opacity .2s;
+    transition: opacity .3s;
   }
   .fade-enter, .fade-leave-to {
     opacity: 0;
@@ -120,6 +121,7 @@
           width: 18px;
           height: 1.5px;
           background-color: #4a4a4a;
+          transition: all .3s;
           &::before {
             content: '';
             bottom: 5px;
@@ -128,6 +130,7 @@
             width: inherit;
             height: inherit;
             background-color: #4a4a4a;
+            transition: bottom .2s .2s, transform .2s;
           }
           &::after {
             content: '';
@@ -137,6 +140,22 @@
             width: inherit;
             height: inherit;
             background-color: #4a4a4a;
+            transition: top .2s .2s, transform .2s;
+          }
+        }
+        &.is-active {
+          .ham {
+            background-color: transparent;
+            &::before {
+              transform: rotate(45deg);
+              bottom: 0;
+              transition: bottom .2s, transform .2s .2s;
+            }
+            &::after {
+              transform: rotate(-45deg);
+              top: 0;
+              transition: top .2s, transform .2s .2s;
+            }
           }
         }
         .content {

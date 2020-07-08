@@ -9,7 +9,7 @@
       </router-link>
     </h1>
     <nav class="nav__wrapper">
-      <div class="nav-hamburger" @click="toggleNav">
+      <div :class="['nav-hamburger', hamburgerClass]" @click="toggleNav">
         <div class="ham" />
         <span class="content">Menu</span>
       </div>
@@ -79,6 +79,10 @@ export default class NavMenu extends Vue {
   @Watch('$route')
   onRouteChange() {
     this.navDisplay();
+  }
+
+  get hamburgerClass() {
+    return this.isNavDisplay ? 'is-active' : '';
   }
 
   navDisplay() {
