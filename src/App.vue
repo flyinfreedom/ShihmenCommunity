@@ -2,7 +2,6 @@
   <div id="app">
     <NavMenu />
     <router-view/>
-    <FooterBanner />
     <Footer />
   </div>
 </template>
@@ -17,7 +16,6 @@ import Footer from '@/components/Footer.vue';
   components: { NavMenu, FooterBanner, Footer }
 })
 export default class App extends Vue {
-  
 }
 </script>
 

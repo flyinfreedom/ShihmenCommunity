@@ -6,3 +6,8 @@
     padding-top: map-get($nav-height, tablet);
   }
 }
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}

@@ -54,7 +54,7 @@ const routes: Array<RouteConfig> = [
     children: [
       {
         path: '',
-        name: 'News',
+        name: 'AdminNews',
         component: () => import(/* webpackChunkName: "admin.news" */ '../components/admin/News.vue')
       }
     ]

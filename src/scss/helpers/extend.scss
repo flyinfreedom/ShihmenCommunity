@@ -3,3 +3,12 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+%bottom-line-center {
+  position: absolute;
+  width: 67%;
+  height: 3px;
+  background-color: $main-color;
+  left: 50%;
+  transform: translateX(-50%);
+}
