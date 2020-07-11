@@ -2,20 +2,22 @@
   <div id="app">
     <NavMenu />
     <router-view/>
-    <Footer />
+    <Footer :footer-banner-class="renderClass" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import NavMenu from '@/components/NavMenu.vue';
-import FooterBanner from '@/components/FooterBanner.vue';
 import Footer from '@/components/Footer.vue';
 
 @Component({
-  components: { NavMenu, FooterBanner, Footer }
+  components: { NavMenu, Footer }
 })
 export default class App extends Vue {
+  get renderClass() {
+    return this.$route.name === "Introduction" ? 'theme-white' : '';
+  }
 }
 </script>
 

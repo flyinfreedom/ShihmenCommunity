@@ -1,9 +1,40 @@
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 8px;
+// }
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: #f2f7f3; 
+// }
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: $main-color;
+// }
+
+// body{
+//   scrollbar-base-color: #000;
+//   scrollbar-face-color: #f2f7f3;
+//   scrollbar-3dlight-color: #000;
+//   scrollbar-highlight-color: #000;
+//   scrollbar-track-color: #000;
+//   scrollbar-arrow-color: black;
+//   scrollbar-shadow-color: #000;
+//   scrollbar-dark-shadow-color: #000;
+// }
+
 
 #app {
   min-width: 320px;
+  overflow: hidden;
   padding-top: map-get($nav-height, desktop);
   @include breakpoint(tablet) {
     padding-top: map-get($nav-height, tablet);
+  }
+}
+
+.article {
+  @include breakpoint(tablet) {
+    min-height: calc(100vh - 302px);
   }
 }
 

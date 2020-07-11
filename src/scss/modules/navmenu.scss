@@ -47,20 +47,36 @@
         &:first-child {
           display: none;
         }
-        a {
+        &>a {
           display: block;
-          padding: 12px 24px;
+          padding: 11px 24px;
           position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: $main-color;
+            bottom: 0;
+            left: 26px;
+          }
           &.router-link-exact-active {
             &::before {
-              content: '';
-              position: absolute;
               width: calc(100% - 52px);
-              height: 3px;
-              background-color: $main-color;
-              bottom: 0;
-              left: 50%;
-              transform: translateX(-50%);
+            }
+          }
+        }
+        @include breakpoint(tablet, min) {
+          &>a {
+            &::before {
+              transition: width .1s ease-out;
+            }
+          }
+          &:hover {
+            &>a {
+              &::before {
+                width: calc(100% - 52px);
+              }
             }
           }
         }
@@ -186,7 +202,7 @@
           font-weight: normal;
           display: block;
           text-align: left;
-          a {
+          &>a {
             padding: 11.5px 0;
             &.router-link-exact-active {
               font-weight: 500;
@@ -214,7 +230,7 @@
       .mail-icon {
         width: 20px;
       }
-      span {
+      &>span {
         padding: 4px 0 10px 0;
         font-size: 12px;
       }
@@ -241,7 +257,7 @@
         .nav-menu {
           padding-left: 24px;
           .menu__item {
-            a {
+            &>a {
               padding: 12px 0;
             }
             &+.menu__item {

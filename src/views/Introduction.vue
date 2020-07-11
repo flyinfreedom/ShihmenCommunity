@@ -3,7 +3,7 @@
     class="introduction__wrapper"
     title="社區介紹"
     sub-title="Introduction"
-    footer-banner-class="theme-white"
+    topBackgroundImage="introduction/main-banner.jpg"
     >
     <div class="introduction__main">
       <div class="inner">

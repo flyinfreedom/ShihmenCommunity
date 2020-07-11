@@ -1,7 +1,10 @@
 <template>
-  <div class="travel">
-    <BaseLayout title="社區輕旅行" sub-title="Travel" />
-  </div>
+  <BaseLayout
+    title="社區輕旅行"
+    sub-title="Travel"
+    class="travel__wrapper"
+    topBackgroundImage="travel/main-banner.jpg"
+    />
 </template>
 
 <script lang="ts">

@@ -37,14 +37,17 @@ export default class HomeSlider extends Mixins(PageVisibilityMixin) {
   interval: number | null = null;
   images: any[] = [
     {
-      url: 'slider-fake0.jpg',
+      url: 'slider-0.jpg',
     },
     {
-      url: 'slider-fake1.jpg',
+      url: 'slider-1.jpg',
     },
     {
-      url: 'slider-fake2.jpg',
-    }
+      url: 'slider-2.jpg',
+    },
+    {
+      url: 'slider-3.jpg',
+    },
   ];
 
   created() {

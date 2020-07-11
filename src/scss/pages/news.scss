@@ -1,0 +1,62 @@
+.inner {
+  padding: 100px 26%;
+}
+.news {
+  padding: 84px 0 84px 46px;
+  border-left: 1.5px solid $main-color;
+  font-size: 16px;
+  .date {
+    font-size: inherit;
+    color: $main-color;
+    position: relative;
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 50%;
+      left: -51.5px;
+      transform: translateY(-50%);
+      background-color: $main-color;
+    }
+  }
+  .content {
+    font-size: inherit;
+    margin-top: 20px;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+  &+.news {
+    padding-top: 0;
+  }
+}
+
+@include breakpoint(tablet) {
+  .inner {
+    padding: 60px 48px;
+  }
+  .news {
+    font-size: 14px;
+    .content {
+      line-height: 24px;
+    }
+  }
+}
+
+@include breakpoint(mobile) {
+  .inner {
+    padding: 20px 20px 20px 18px;
+  }
+  .news {
+    padding: 24px 0 24px 24px;
+    font-size: 12px;
+    .date {
+      &::before {
+        left: -29.5px;
+      }
+    }
+    .content {
+      line-height: 22px;
+    }
+  }
+}

@@ -24,6 +24,7 @@
 .map__wrapper {
   background-color: $secondary-color;
   text-align: center;
+  font-size: 14px;
   .inner {
     padding: 70px 110px;
   }
@@ -41,8 +42,12 @@
 @include breakpoint(tablet) {
   // TODO 需確認
   .introduction__main {
+    font-size: 14px;
     .inner {
       padding: 40px 44px 110px 44px;
+    }
+    p {
+      line-height: 24px;
     }
   }
   .map__wrapper {

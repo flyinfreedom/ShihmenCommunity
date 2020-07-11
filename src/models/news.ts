@@ -1,5 +1,4 @@
-export interface News {
-    date: Date;
-    title: string;
+export interface INews {
+    date: string;
     content: string;
 }
