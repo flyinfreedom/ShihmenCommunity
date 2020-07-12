@@ -2,7 +2,7 @@
   <header class="nav-menu__wrapper">
     <h1>
       <router-link class="title" :to="{ name: 'Home' }">
-        <img src="https://fakeimg.pl/300/" class="logo" alt="shihmen-community-logo">
+        <img :src="require('@/assets/logo.png')" class="logo" alt="shihmen-community-logo">
         <span class="content">
           <span>桃園龍潭區</span>石門社區發展協會
         </span>
@@ -26,7 +26,7 @@
       </transition>
     </nav>
     <a class="mail-connection" href="mailto:shihmencommunity@gmail.com">
-      <img src="https://fakeimg.pl/300/" class="mail-icon" alt="mail-icon">
+      <img :src="require('@/assets/mail-icon.svg')" class="mail-icon" alt="mail-icon">
       <span>信箱聯絡</span>
     </a>
   </header>

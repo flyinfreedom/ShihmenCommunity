@@ -1,4 +1,4 @@
-export interface INews {
+export interface News {
     date: string;
     content: string;
 }

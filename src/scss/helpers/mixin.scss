@@ -54,3 +54,29 @@
 		@error "Breakpoint doesn't exist in the map.";
 	}
 }
+
+/* mixin for IE multiline */
+@mixin multiLineEllipsis($fontSize: 16px, $lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount; 
+  text-align: justify;
+  margin-right: -$fontSize;
+  padding-right: $fontSize;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: $fontSize;
+    height: $fontSize;
+    margin-top: 0.2 * $fontSize;
+    background: $bgColor;
+  }
+}

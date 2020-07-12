@@ -1,29 +1,25 @@
 <template>
-  <BaseLayout
-    class="news__wrapper"
-    title="活動消息"
-    sub-title="News"
-    topBackgroundImage="news/main-banner.jpg"
-    >
+  <section class="home__news">
     <div class="inner">
-      <section class="news" v-for="(news, i) in newsData" :key="i">
-        <h3 class="date">{{ news.date }}</h3>
+      <h2>活動消息</h2>
+      <div class="news" v-for="(news, i) in newsData" :key="i">
+        <span class="date">{{ news.date }}</span>
         <p class="content">{{ news.content }}</p>
-      </section>
+      </div>
+      <div class="more-news">
+        <router-link :to="{ name: 'News'}">更多消息 ></router-link>
+      </div>
     </div>
-  </BaseLayout>
+  </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import BaseLayout from '@/components/BaseLayout.vue';
 import { DB } from "@/firebase/db";
 import { News as INewsResponse } from "@/models/news";
 
-@Component({
-  components: { BaseLayout }
-})
-export default class News extends Vue {
+@Component
+export default class HomeNews extends Vue {
   newsData: INewsResponse[] = [];
 
   created() {
@@ -33,8 +29,7 @@ export default class News extends Vue {
   async getNewsAsync() {
     const newsRef = DB.collection('news');
     try {
-      await newsRef.orderBy('date', 'desc').limit(20).get().then(snapshot => {
-        // const lastVisible = snapshot.docs[snapshot.docs.length-1];
+      await newsRef.orderBy('date', 'desc').limit(2).get().then(snapshot => {
         snapshot.forEach(doc => {
           this.newsData.push(doc.data() as INewsResponse);
         })
@@ -46,5 +41,5 @@ export default class News extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-@import '@/scss/pages/news.scss';
+@import '@/scss/modules/home-news.scss';
 </style>

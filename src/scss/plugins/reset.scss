@@ -38,26 +38,13 @@ body {
   margin: 0;
 }
 
-/**
- * Render the `main` element consistently in IE.
- */
-
-main {
-  display: block;
-}
 
 /* Vertical rhythm
    ========================================================================== */
 
 p,
 table,
-blockquote,
-address,
-pre,
-iframe,
-form,
-figure,
-dl {
+form {
   margin: 0;
 }
 
@@ -66,10 +53,7 @@ dl {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   font-size: inherit;
   line-height: inherit;
   font-weight: inherit;
@@ -86,50 +70,6 @@ ol {
   list-style: none;
 }
 
-/* Lists (definition)
-   ========================================================================== */
-
-dt {
-  font-weight: bold;
-}
-
-dd {
-  margin-left: 0;
-}
-
-/* Grouping content
-   ========================================================================== */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-  border: 0;
-  border-top: 1px solid;
-  margin: 0;
-  clear: both;
-  color: inherit;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: inherit; /* 2 */
-}
-
-address {
-  font-style: inherit;
-}
-
 /* Text-level semantics
    ========================================================================== */
 
@@ -143,86 +83,6 @@ a {
   color: inherit;
 }
 
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-
-abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: inherit; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-  font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/* Embedded content
-   ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-// img {
-//   border-style: none;
-//   vertical-align: bottom;
-// }
-
-// embed,
-// object,
-// iframe {
-//   border: 0;
-//   vertical-align: bottom;
-// }
-
 /* Forms
    ========================================================================== */
 
@@ -233,7 +93,6 @@ sup {
 
 button,
 input,
-optgroup,
 select,
 textarea {
   -webkit-appearance: none;
@@ -249,19 +108,6 @@ textarea {
   border-radius: 0;
   text-align: inherit;
 }
-
-[type="checkbox"] {
-  /* 1 */
-  -webkit-appearance: checkbox;
-  appearance: checkbox;
-}
-
-[type="radio"] {
-  /* 1 */
-  -webkit-appearance: radio;
-  appearance: radio;
-}
-
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -328,25 +174,6 @@ button:-moz-focusring,
 }
 
 /**
- * Remove padding
- */
-
-option {
-  padding: 0;
-}
-
-/**
- * Reset to invisible
- */
-
-fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  min-width: 0;
-}
-
-/**
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
  * 3. Remove the padding so developers are not caught out when they zero out
@@ -361,13 +188,6 @@ legend {
   white-space: normal; /* 1 */
 }
 
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-  vertical-align: baseline;
-}
 
 /**
  * Remove the default vertical scrollbar in IE 10+.
@@ -429,58 +249,6 @@ label[for] {
   cursor: pointer;
 }
 
-/* Interactive
-   ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-  display: block;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-
-summary {
-  display: list-item;
-}
-
-/* Table
-   ========================================================================== */
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-caption {
-  text-align: left;
-}
-
-td,
-th {
-  vertical-align: top;
-  padding: 0;
-}
-
-th {
-  text-align: left;
-  font-weight: bold;
-}
-
-/* Misc
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
-template {
-  display: none;
-}
 
 /**
  * Add the correct display in IE 10.

@@ -1,0 +1,59 @@
+.home__travel {
+  background-color: $white;
+  padding: 70px 220px;
+  h2 {
+    color: $main-color;
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .travel__map {
+    width: 100%;
+    .inner {
+      padding: 46px 0 185px 0;
+    }
+    .map__container {
+      width: 100%;
+      padding-bottom: 52%;
+      border: 6px solid $main-color;
+      // background: url('~@/assets/industry/main-banner.jpg') center bottom no-repeat;
+    }
+  }
+}
+
+@include breakpoint(tablet) {
+  .home__travel {
+    padding: 40px 40px 80px 40px;
+    h2 {
+      text-align: left;
+      font-size: 24px;
+      line-height: 36px;
+    }
+    .travel__map {
+      .inner {
+        padding: 36px 60px 0 60px;
+      }
+    }
+  }
+}
+
+@include breakpoint(mobile) {
+  .home__travel {
+    padding: 0;
+    h2 {
+      background-image: linear-gradient(110deg, #7dab91 42%, #477258 73%);
+      text-align: left;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 6px 20px;
+      color: $white;
+    }
+    .travel__map {
+      padding: 0;
+      .inner {
+        padding: 30px 20px;
+      }
+    }
+  }
+}

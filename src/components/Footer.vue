@@ -3,7 +3,7 @@
     <div :class="['footer-banner__wrapper', footerBannerClass]">
       <p class="title">
         桃園龍潭區石門社區發展協會
-        <img src="https://fakeimg.pl/300x300/" class="logo" alt="shihmen-community-logo">
+        <img :src="require('@/assets/logo.png')" class="logo" alt="shihmen-community-logo">
       </p>
       <span class="address">龍潭區大平里永平路80號</span>
     </div>

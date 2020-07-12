@@ -16,7 +16,8 @@ import Footer from '@/components/Footer.vue';
 })
 export default class App extends Vue {
   get renderClass() {
-    return this.$route.name === "Introduction" ? 'theme-white' : '';
+    const routerNameArray = ['Introduction', 'Home'];
+    return routerNameArray.some(v => v === this.$route.name) ? 'theme-white' : '';
   }
 }
 </script>

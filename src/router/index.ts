@@ -5,6 +5,9 @@ import {Auth} from '../firebase/auth';
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
+  { path: '*',
+    redirect: '/'
+  },
   {
     path: '/',
     name: 'Home',

@@ -1,0 +1,119 @@
+.home__news {
+  .inner {
+    padding: 70px 20%;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+  .news {
+    color: #4a4a4a;
+    font-weight: 500;
+    .date {
+      line-height: 24px;
+      width: 90px;
+      display: inline-block;
+      vertical-align: text-top;
+      position: relative;
+      &::before {
+        content: '';
+        background-color: $main-color;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: -40px;
+        top: 7px;
+      }
+    }
+    .content {
+      @include multiLineEllipsis($lineHeight: 24px, $lineCount: 2);  
+      vertical-align: text-top;
+      display: inline-block;
+      width: calc(100% - 90px);
+      line-height: 24px;
+      padding-left: 70px;
+      position: relative;
+    }
+    &+.news {
+      margin-top: 20px;
+    }
+    &+.more-news {
+      margin-top: 30px;
+    }
+  }
+  .more-news {
+    text-align: right;
+    padding: 9px 0;
+    border-bottom: 2px solid #ebebeb;
+    a {
+      font-size: 14px;
+      line-height: 20px;
+      padding: 8px 2px;
+      border-bottom: 3px solid $main-color;
+    }
+  }
+}
+
+@include breakpoint(tablet) {
+  .home__news {
+    .inner {
+      padding: 40px;
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 26px;
+    }
+    .news {
+      .date {
+        font-size: 14px;
+      }
+      .content {
+        font-size: 12px;
+        padding-left: 80px;
+      }
+    }
+  }
+}
+
+@include breakpoint(mobile) {
+  .home__news {
+    .inner {
+      padding: 10px 20px 20px 20px;
+    }
+    h2 {
+      font-size: 13px;
+      line-height: 19px;
+      margin-bottom: 12px;
+    }
+    .news {
+      .date {
+        display: block;
+        font-size: 12px;
+        padding-left: 24px;
+        line-height: 18px;
+        &::before {
+          top: 4px;
+          left: 0;
+        }
+      }
+      .content {
+        width: 100%;
+        display: block;
+        font-size: 12px;
+        margin-top: 4px;
+        padding-left: 0;
+      }
+      &+.more-news {
+        margin-top: 14px;
+      }
+    }
+    .more-news {
+      &>a {
+        font-size: 12px;
+      }
+    }
+  }
+}

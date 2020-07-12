@@ -29,8 +29,16 @@
   .welfare__photos {
     margin-top: 80px;
     @include flex($justify-content: space-between);
-    .photo {
+    .photo__container {
       width: calc(33.3% - 4px);
+    }
+    .photo {
+      width: 100%;
+      padding-bottom: 74.9%;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
     }
   }
 }
@@ -54,7 +62,7 @@
     }
     .welfare__photos {
       margin-top: 40px;
-      .photo {
+      .photo__container {
         width: calc(33.3% - 2.6px);
       }
     }
@@ -88,9 +96,9 @@
       margin-top: 40px;
       display: block;
       font-size: 0;
-      .photo {
+      .photo__container {
         width: 100%;
-        &+.photo {
+        &+.photo__container {
           margin-top: 4px;
         }
       }

@@ -58,11 +58,11 @@
             height: 3px;
             background-color: $main-color;
             bottom: 0;
-            left: 26px;
+            left: calc(50% - 24px);
           }
           &.router-link-exact-active {
             &::before {
-              width: calc(100% - 52px);
+              width: 48px;
             }
           }
         }
@@ -75,7 +75,7 @@
           &:hover {
             &>a {
               &::before {
-                width: calc(100% - 52px);
+                width: 48px;
               }
             }
           }
@@ -176,7 +176,7 @@
         }
         .content {
           font-size: 12px;
-          padding: 10px 0 10px 0;
+          padding: 12px 0 10px 0;
           color: #4a4a4a;
         }
       }
@@ -231,7 +231,7 @@
         width: 20px;
       }
       &>span {
-        padding: 4px 0 10px 0;
+        padding: 6px 0 10px 0;
         font-size: 12px;
       }
     }

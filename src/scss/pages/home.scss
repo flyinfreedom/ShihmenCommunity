@@ -14,7 +14,7 @@
     h2 {
       font-size: 20px;
       font-weight: 500;
-      p {
+      &>p {
         font-size: inherit;
         font-weight: inherit;
         &.indent {
@@ -43,7 +43,7 @@
       padding: 0 0 20px 40px;
       h2 {
         font-size: 14px;
-        p {
+        &>p {
           font-size: inherit;
           font-weight: inherit;
           &.indent {
