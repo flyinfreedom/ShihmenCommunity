@@ -26,7 +26,7 @@
       </transition>
     </nav>
     <a class="mail-connection" href="mailto:shihmencommunity@gmail.com">
-      <img :src="require('@/assets/mail-icon.svg')" class="mail-icon" alt="mail-icon">
+      <img :src="require('@/assets/mail-icon.png')" class="mail-icon" alt="mail-icon">
       <span>信箱聯絡</span>
     </a>
   </header>

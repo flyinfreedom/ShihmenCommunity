@@ -21,7 +21,7 @@
     <section class="map__wrapper">
       <div class="inner">
         <h3>社區地圖</h3>
-        <img class="map" src="https://fakeimg.pl/1220x850/?text=MAP" alt="shihmen-comminity-map">
+        <div class="map" />
       </div>
     </section>
   </BaseLayout>

@@ -36,6 +36,11 @@
   .map {
     width: 100%;
     margin-top: 70px;
+    padding-bottom: 94.6%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-image: url('~@/assets/introduction/map_web.jpg');
   }
 }
 
@@ -60,6 +65,7 @@
     }
     .map {
       margin-top: 40px;
+      background-image: url('~@/assets/introduction/map_tablet.jpg');
     }
   }
 }

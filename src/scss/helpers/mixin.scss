@@ -15,13 +15,6 @@
 	}
 }
 
-@mixin background-image($fileName) {
-	background-image: url($PATH_IMG + $fileName);
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	@content;
-}
-
 @mixin flex($direction: row, $align-items: false, $justify-content: false) {
   display: flex;
   flex-direction: $direction;
