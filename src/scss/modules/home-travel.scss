@@ -121,6 +121,8 @@
         display: none;
       }
       .map__container {
+        display: block;
+        padding-top: 0;
         .map {
           width: 100%;
         }
