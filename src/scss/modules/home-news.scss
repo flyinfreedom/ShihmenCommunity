@@ -29,6 +29,7 @@
     }
     .content {
       @include multiLineEllipsis($lineHeight: 24px, $lineCount: 2);  
+      word-break: break-all;
       vertical-align: text-top;
       display: inline-block;
       width: calc(100% - 90px);

@@ -9,9 +9,9 @@
       <section class="industry" v-for="(industry, index) in industryData" :key="index">
         <div class="inner">
           <div class="industry__content">
-            <h3>
-              0{{ index + 1 }}<span>{{ industry.title }}</span>
-            </h3>
+            <div>
+              0{{ index + 1 }}<h3>{{ industry.title }}</h3>
+            </div>
             <p class="description">
               {{ industry.description }}
             </p>

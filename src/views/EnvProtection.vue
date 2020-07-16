@@ -9,9 +9,9 @@
       <section class="env-protection" v-for="(protection, index) in envProtectionData" :key="index">
         <div class="inner">
           <div class="env-protection__content">
-            <h3>
-              0{{ index + 1 }}<span>{{ protection.title }}</span>
-            </h3>
+            <div>
+              0{{ index + 1 }}<h3>{{ protection.title }}</h3>
+            </div>
             <p class="description">{{ protection.description }}</p>
           </div>
           <div class="env-protection__photo">

@@ -45,7 +45,6 @@
 }
 
 @include breakpoint(tablet) {
-  // TODO 需確認
   .introduction__main {
     font-size: 14px;
     .inner {
@@ -65,7 +64,6 @@
     }
     .map {
       margin-top: 40px;
-      background-image: url('~@/assets/introduction/map_tablet.jpg');
     }
   }
 }
