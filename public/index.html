@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>石門社區發展協會</title>
+    <script>
+      function msieversion() 
+      {
+          var ua = window.navigator.userAgent;
+          var msie = ua.indexOf("MSIE ");
+          var trident = ua.indexOf('Trident/');
+
+          if (msie > 0 || trident > 0) // If Internet Explorer, return version number
+          {
+              return true;
+          }
+
+          return false;
+      }
+
+      if(msieversion()) {
+        alert('您的瀏覽器版本過舊。\n建議下在Goolge Chrome 以提升瀏覽的品質');
+        window.location.href = "https://www.google.com/chrome/";
+      }
+    </script>
   </head>
   <body>
     <noscript>
