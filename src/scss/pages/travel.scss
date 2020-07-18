@@ -1,4 +1,4 @@
-.map__container {
+.travel-map__container {
   padding: 70px 14.8% 70px 14.8%;
   .map {
     width: 100%;
@@ -39,7 +39,7 @@
 }
 
 @include breakpoint(tablet) {
-  .map__container {
+  .travel-map__container {
     padding: 50px;
   }
   .travel__container {
@@ -69,7 +69,7 @@
 }
 
 @include breakpoint(mobile) {
-  .map__container {
+  .travel-map__container {
     padding: 20px 0 0 0;
   }
   .travel__container {

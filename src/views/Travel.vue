@@ -6,7 +6,7 @@
     topBackgroundImage="travel/main-banner.jpg"
     >
     <div class="inner">
-      <div class="map__container">
+      <div class="travel-map__container">
         <img class="map" src="@/assets/introduction/map_web.jpg" alt="travel_map">
       </div>
     </div>
