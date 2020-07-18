@@ -1,6 +1,5 @@
 <template>
   <div>
-    我是Admin的Layout
     <router-view />
   </div>
 </template>

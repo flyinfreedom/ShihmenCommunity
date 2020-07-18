@@ -5,43 +5,46 @@ import {Auth} from '../firebase/auth';
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
-  { path: '*',
-    redirect: '/'
-  },
   {
     path: '/',
-    name: 'Home',
-    component: () => import('../views/Home.vue')
-  },
-  {
-    path: '/news',
-    name: 'News',
-    component: () => import(/* webpackChunkName: "news" */ '../views/News.vue')
-  },
-  {
-    path: '/travel',
-    name: 'Travel',
-    component: () => import(/* webpackChunkName: "travel" */ '../views/Travel.vue')
-  },
-  {
-    path: '/introduction',
-    name: 'Introduction',
-    component: () => import(/* webpackChunkName: "introduction" */ '../views/Introduction.vue')
-  },
-  {
-    path: '/env-protection',
-    name: 'EnvProtection',
-    component: () => import(/* webpackChunkName: "env-protection" */ '../views/EnvProtection.vue')
-  },
-  {
-    path: '/industry',
-    name: 'Industry',
-    component: () => import(/* webpackChunkName: "industry" */ '../views/Industry.vue')
-  },
-  {
-    path: '/welfare',
-    name: 'Welfare',
-    component: () => import(/* webpackChunkName: "welfare" */ '../views/Welfare.vue')
+    component: () => import(/* webpackChunkName: "layout" */ '../components/Layout.vue'),
+    children: [      
+      {
+        path: '/',
+        name: 'Home',
+        component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
+      },
+      {
+        path: '/news',
+        name: 'News',
+        component: () => import(/* webpackChunkName: "news" */ '../views/News.vue')
+      },
+      {
+        path: '/travel',
+        name: 'Travel',
+        component: () => import(/* webpackChunkName: "travel" */ '../views/Travel.vue')
+      },
+      {
+        path: '/introduction',
+        name: 'Introduction',
+        component: () => import(/* webpackChunkName: "introduction" */ '../views/Introduction.vue')
+      },
+      {
+        path: '/env-protection',
+        name: 'EnvProtection',
+        component: () => import(/* webpackChunkName: "env-protection" */ '../views/EnvProtection.vue')
+      },
+      {
+        path: '/industry',
+        name: 'Industry',
+        component: () => import(/* webpackChunkName: "industry" */ '../views/Industry.vue')
+      },
+      {
+        path: '/welfare',
+        name: 'Welfare',
+        component: () => import(/* webpackChunkName: "welfare" */ '../views/Welfare.vue')
+      },
+    ]
   },
   {
     path: '/signin',
@@ -61,7 +64,10 @@ const routes: Array<RouteConfig> = [
         component: () => import(/* webpackChunkName: "admin.news" */ '../components/admin/News.vue')
       }
     ]
-  }
+  },
+  { path: '*',
+    redirect: '/'
+  },
 ];
 
 const router = new VueRouter({

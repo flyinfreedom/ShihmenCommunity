@@ -28,7 +28,7 @@ export default class Travel extends Vue {
   links: any[] = [
     {
       label: '社區通',
-      url: 'https://www.google.com',
+      url: 'http://sixstar.moc.gov.tw/blog/johnlee4712609',
     },
     {
       label: 'FaceBook',
