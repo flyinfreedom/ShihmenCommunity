@@ -57,6 +57,6 @@ export default class Travel extends Vue {
   ];
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   @import '@/scss/pages/travel.scss';
 </style>
