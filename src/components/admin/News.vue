@@ -107,7 +107,7 @@ export default class News extends Vue {
 }
 </script>
 
-<style>
+<style scoped>
   #app {
     overflow: auto !important;
     padding-top: 1.5em !important;
