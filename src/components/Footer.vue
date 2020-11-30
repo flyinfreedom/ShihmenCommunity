@@ -6,6 +6,7 @@
         <img :src="require('@/assets/logo.png')" class="logo" alt="shihmen-community-logo">
       </p>
       <span class="address">龍潭區大平里永平路80號</span>
+      <span class="address">方小姐：0913181651</span>
     </div>
     <div class="footer__wrapper">
       <span class="copyright">Copyright © 桃園市龍潭區石門社區發展協會 All Rights Reserved.</span>
